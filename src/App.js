@@ -8,6 +8,7 @@ import ThemeSwitchButton from "./Components/ThemeSwitchButton/ThemeSwitchButton"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Dashboard1 from "./Dashboard/Dashboard1";
 import ContactPage from "./Pages/ContactPage/ContactPage";
+import AboutMe from "./Pages/AboutMe/AboutMe";
 
 function App() {
   const [darkmode, setDarkmode] = React.useState(false);
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/dashboard1" component={Dashboard1} />
           <Route exact path="/contact" component={ContactPage} />
+          <Route exact path="/aboutme" component={AboutMe} />
         </Switch>
       </ThemeProvider>
     </>

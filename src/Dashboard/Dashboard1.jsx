@@ -14,6 +14,7 @@ import useStyles, { StyledTab } from "./Dashboard1.styles";
 import ThemeSwitchButton from "../Components/ThemeSwitchButton/ThemeSwitchButton";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Messages from "./MessageCollection/MessagesCollection";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -86,6 +87,7 @@ export default function VerticalTabs() {
               {...a11yProps(2)}
             />
             <StyledTab icon={<BuildIcon />} label="Skills" {...a11yProps(3)} />
+            <StyledTab icon={<BuildIcon />} label="Messages" {...a11yProps(4)} />
           </Tabs>
         </Paper>
         <div className={classes.contentContainer}>
@@ -121,10 +123,10 @@ export default function VerticalTabs() {
             Item Three
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Item Four
+            Item four          
           </TabPanel>
           <TabPanel value={value} index={4}>
-            Item Five
+          <Messages />
           </TabPanel>
           <TabPanel value={value} index={5}>
             Item Six

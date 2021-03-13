@@ -1,12 +1,12 @@
 import React from "react";
 import "./Title.scss";
 
-const Title = () => {
+const Title = ({head, subHead}) => {
   return (
     <div className="title">
       <div className="title__container">
-        <h4>Page name will go here</h4>
-        <h1>Title will go here</h1>
+        <h4>{subHead}</h4>
+        <h1>{head} </h1>
       </div>
     </div>
   );

@@ -13,21 +13,19 @@ const AboutMe = () => {
             <Title head="ABOUT ME" subHead="Main Info" />
             <Grid container xs={12} className={classes.myInfo_container}>
                 <Grid item container lg={4} justify="center">
-                    <Grid item xs={12} className={classes.myInfo_profileImg}>
+                    <Grid item className={classes.myInfo_profileImg}>
                         <Avatar src={Img} variant="square" className={classes.profile} />
                     </Grid>
                     <SocialLinks />
                 </Grid>
                 <Grid item lg={7} className={classes.myInfo_bio}>
                     <Typography variant="body1" gutterBottom>
-                        {" "}
                         Hi My name is Deep Makadiya. I am a Web Developer. Lorem ipsum dolor sit,
                         amet consectetur adipisicing elit. Natus harum praesentium commodi, non
                         incidunt magnam itaque temporibus fugiat sunt, ex quidem reprehenderit,
                         impedit quod a ad ullam voluptates dicta! Architecto.{" "}
                     </Typography>
                     <Typography variant="body1">
-                        {" "}
                         Natus harum praesentium commodi, non incidunt magnam itaque temporibus
                         fugiat sunt, ex quidem reprehenderit, impedit quod a ad ullam voluptates
                         dicta! Architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -10,6 +10,8 @@ export const CustomFab = withStyles({
         transform: "all 0.3s ease",
         color: "white",
         background: "transparent",
+        padding: "0 20px",
+        margin: "10px",
 
         "&:hover": {
             boxShadow: innerShadow,
@@ -21,7 +23,7 @@ export const CustomFab = withStyles({
 
 export default makeStyles((theme) => ({
     homepage: {
-        background: "#353535",
+        background: "#2b2c2f",
         minHeight: "100vh",
     },
     fullHeight: {
@@ -36,5 +38,20 @@ export default makeStyles((theme) => ({
     imageBox: {
         boxShadow: innerShadow,
         padding: "15px",
+        marginBottom: "10px",
+        borderRadius: "50%",
+    },
+    menuBtn: {
+        position: "fixed",
+        top: "30px",
+        right: "30px",
+        color: "white",
+
+        "&:hover": {
+            color: "white",
+        },
+    },
+    effects: {
+        zIndex: "50",
     },
 }));

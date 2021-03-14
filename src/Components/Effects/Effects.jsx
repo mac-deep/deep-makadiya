@@ -6,12 +6,12 @@ import SemiCircle from "./SemiCircle";
 import Square from "./Square";
 
 export default function Effects() {
-  return (
-    <div className="effect-wrap">
-      <Square />
-      <Grid />
-      <SemiCircle />
-      {/* <ReactLogo /> */}
-    </div>
-  );
+    return (
+        <div className="effect-wrap">
+            <Square />
+            <Grid />
+            <SemiCircle />
+            <ReactLogo />
+        </div>
+    );
 }

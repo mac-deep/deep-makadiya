@@ -5,8 +5,8 @@ const innerShadow = "inset 3px 3px 3px #222327, inset -3px -3px 3px #363636";
 
 export default makeStyles((theme) => ({
     profile: {
-        width: theme.spacing(50),
-        height: theme.spacing(50),
+        width: "310px",
+        height: "310px",
         padding: "10px",
         boxShadow: outerShadow,
     },
@@ -24,6 +24,8 @@ export default makeStyles((theme) => ({
         width: "1340px",
     },
     myInfo_profileImg: {
+        width: "360px",
+        height: "360px",
         boxShadow: innerShadow,
         padding: "15px",
         marginBottom: "10px",

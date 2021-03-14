@@ -1,5 +1,11 @@
 .darkmode-btn {
-  position: fixed;
-  top: 20px;
-  right: 10px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
+
+.menuBtn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }

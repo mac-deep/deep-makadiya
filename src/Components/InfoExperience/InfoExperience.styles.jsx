@@ -1,15 +1,21 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core';
 
-const outerShadow = "3px 3px 3px #222327, -3px -3px 3px #363636";
-const innerShadow = "inset 3px 3px 3px #222327, inset -3px -3px 3px #363636";
+import { outerShadow } from '../../Theme/Colors';
 
 export default makeStyles((theme) => ({
   paper: {
-    padding: "20px",
-    backgroundColor: "transparent",
+    padding: '20px',
+    backgroundColor: 'transparent',
     boxShadow: outerShadow,
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
+  },
+  opp: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+      flex: 0,
+      padding: 0,
+    },
   },
 }));

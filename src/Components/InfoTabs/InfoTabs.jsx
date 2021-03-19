@@ -1,15 +1,12 @@
-import React from "react";
-import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import { Box, Container, Typography } from "@material-ui/core";
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import InfoSkills from "../InfoSkills/InfoSkills";
-import InfoEducation from "../InfoEducation/InfoEducation";
-import InfoExperience from "../InfoExperience/InfoExperience";
-import { CustomTab, CustomTabs } from "./InfoTabs.styles";
+import React from 'react';
+import { Box, Container, Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import { useTheme } from '@material-ui/core/styles';
+import InfoSkills from '../InfoSkills/InfoSkills';
+import InfoEducation from '../InfoEducation/InfoEducation';
+import InfoExperience from '../InfoExperience/InfoExperience';
+import { CustomTab, CustomTabs } from './InfoTabs.styles';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,22 +34,15 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-    backgroundColor: "#2b2c2f",
-  },
-});
+// function a11yProps(index) {
+//   return {
+//     id: `simple-tab-${index}`,
+//     "aria-controls": `simple-tabpanel-${index}`,
+//   };
+// }
 
 const InfoTabs = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
   const handleChange = (event, newValue) => {
@@ -65,21 +55,13 @@ const InfoTabs = () => {
 
   return (
     <Container>
-      {/* <Paper className={classes.root}> */}
-      <CustomTabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
+      <CustomTabs value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" centered>
         <CustomTab label="Skills" />
         <CustomTab label="Experience" />
         <CustomTab label="Education" />
       </CustomTabs>
-      {/* </Paper> */}
       <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={value}
         onChangeIndex={handleChangeIndex}
       >

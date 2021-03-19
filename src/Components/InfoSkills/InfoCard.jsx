@@ -1,7 +1,7 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import { SkillBar } from "./InfoSkills.styles";
+import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { SkillBar } from './InfoSkills.styles';
 
 const InfoCard = ({ value }) => {
   return (
@@ -9,7 +9,7 @@ const InfoCard = ({ value }) => {
       <Box width="100%" mr={1}>
         <SkillBar variant="determinate" value={value} />
       </Box>
-      <Box minWidth={85}>
+      <Box>
         <Typography variant="body2" color="inherit">
           {value}%
         </Typography>

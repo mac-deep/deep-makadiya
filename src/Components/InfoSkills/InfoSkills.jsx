@@ -1,7 +1,8 @@
-import React from "react";
-import { Grid, Typography } from "@material-ui/core";
-import makeStyles, { SkillBar } from "./InfoSkills.styles";
-import InfoCard from "./InfoCard";
+import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
+import makeStyles from './InfoSkills.styles';
+import InfoCard from './InfoCard';
+
 const InfoSkills = () => {
   const classes = makeStyles();
   return (

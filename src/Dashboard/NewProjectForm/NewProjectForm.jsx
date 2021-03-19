@@ -1,6 +1,5 @@
-import React from "react";
+import React from 'react';
 import {
-  Fab,
   FormControl,
   Grid,
   IconButton,
@@ -11,22 +10,22 @@ import {
   TextField,
   Typography,
   Button,
-} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import AddPhotoAlternateIcon from "@material-ui/icons/AddPhotoAlternate";
-import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import useStyles from "./NewProjectForm.styles";
+} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import useStyles from './NewProjectForm.styles';
 
 const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
   const classes = useStyles();
   const [projectData, setProjectData] = React.useState({
-    title: "",
-    category: "",
-    description: "",
-    date: "",
+    title: '',
+    category: '',
+    description: '',
+    date: '',
     tools: [],
-    link: "",
-    thumbnail: "",
+    link: '',
+    thumbnail: '',
     slideshow: [],
   });
 
@@ -43,9 +42,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item sm={12}>
-            <Typography variant="h3">
-              Fill the details for new project:
-            </Typography>
+            <Typography variant="h3">Fill the details for new project:</Typography>
           </Grid>
           <Grid item container sm={4} spacing={2}>
             <Grid item sm={10}>
@@ -62,12 +59,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
             <Grid item sm={10}>
               <FormControl fullWidth variant="outlined">
                 <InputLabel>Category</InputLabel>
-                <Select
-                  name="category"
-                  value={projectData.category}
-                  onChange={handleChange}
-                  label="Category"
-                >
+                <Select name="category" value={projectData.category} onChange={handleChange} label="Category">
                   <MenuItem value="web-app">WebApp</MenuItem>
                   <MenuItem value="mobile-app">Mobile App</MenuItem>
                   <MenuItem value="e-commerce">E-commerce</MenuItem>
@@ -90,13 +82,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
           </Grid>
           <Grid item container sm={4} spacing={1}>
             <Grid item sm={10}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                focused
-                label="Date"
-                type="date"
-              />
+              <TextField fullWidth variant="outlined" focused label="Date" type="date" />
             </Grid>
             <Grid item sm={10}>
               <TextField fullWidth variant="outlined" label="Date" />
@@ -108,12 +94,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
           <Grid item container sm={4} spacing={1}>
             <Grid item sm={12}>
               <Typography variant="h6">Thumbnail:</Typography>
-              <input
-                accept="image/*"
-                id="thumbnail"
-                type="file"
-                className={classes.input}
-              />
+              <input accept="image/*" id="thumbnail" type="file" className={classes.input} />
               <label htmlFor="thumbnail">
                 <IconButton component="span" color="secondary">
                   <AddPhotoAlternateIcon fontSize="large" />
@@ -122,13 +103,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
             </Grid>
             <Grid item sm={6}>
               <Typography variant="h6">Slideshow:</Typography>
-              <input
-                accept="image/*"
-                id="slideshow"
-                type="file"
-                multiple
-                className={classes.input}
-              />
+              <input accept="image/*" id="slideshow" type="file" multiple className={classes.input} />
               <label htmlFor="slideshow">
                 <IconButton component="span" color="secondary">
                   <PhotoLibraryIcon fontSize="large" />
@@ -138,7 +113,7 @@ const NewProjectForm = React.forwardRef(({ handleClose }, ref) => {
           </Grid>
           <Grid item container xs={12}>
             <Grid item sm={9}>
-              {" "}
+              {' '}
             </Grid>
             <Grid item container sm={3} spacing={2}>
               <Grid item sm={6}>

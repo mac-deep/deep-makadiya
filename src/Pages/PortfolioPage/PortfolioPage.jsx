@@ -1,11 +1,15 @@
-import React from "react";
-import Title from "../../Components/Title/Title";
+import React from 'react';
+import ProjectCollection from '../../Components/ProjectCollection/ProjectCollection';
+import Title from '../../Components/Title/Title';
+import { Container } from '@material-ui/core';
 
 const PortfolioPage = () => {
   return (
-    <div>
-      <Title head="Latest Work" subHead="Portfolio" />
-      <h1>Portfolio page will be here</h1>
+    <div style={{ backgroundColor: '#2b2c2f', minHeight: '100vh' }}>
+      <Container maxWidth="lg">
+        <Title head="Latest Work" subHead="Portfolio" />
+        <ProjectCollection />
+      </Container>
     </div>
   );
 };

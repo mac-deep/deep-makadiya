@@ -1,19 +1,21 @@
-import { Tab, withStyles, makeStyles, Tabs } from "@material-ui/core";
-
-const outerShadow = "3px 3px 3px #222327, -3px -3px 3px #363636";
+import { Tab, withStyles, Tabs } from '@material-ui/core';
+import { outerShadow } from '../../Theme/Colors';
 
 export const CustomTab = withStyles((theme) => ({
   root: {
     margin: 10,
+    // boxShadow: innerShadow,
+    borderRadius: 30,
   },
   selected: {
     boxShadow: outerShadow,
     borderRadius: 30,
+    transition: 'all 0.3s ease',
   },
 }))(Tab);
 
 export const CustomTabs = withStyles((theme) => ({
   indicator: {
-    display: "none",
+    display: 'none',
   },
 }))(Tabs);

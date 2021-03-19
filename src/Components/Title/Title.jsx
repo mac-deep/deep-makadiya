@@ -1,12 +1,17 @@
-import React from "react";
-import "./Title.scss";
+import { Typography } from '@material-ui/core';
+import React from 'react';
+import './Title.scss';
 
-const Title = ({head, subHead}) => {
+const Title = ({ head, subHead }) => {
   return (
     <div className="title">
       <div className="title__container">
-        <h4>{subHead}</h4>
-        <h1>{head} </h1>
+        <Typography variant="body1" color="primary">
+          {subHead}
+        </Typography>
+        <Typography variant="h4" color="textPrimary">
+          {head}
+        </Typography>
       </div>
     </div>
   );

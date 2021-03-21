@@ -1,18 +1,20 @@
 import React from 'react';
+import { Typography, Paper } from '@material-ui/core';
+import SchoolIcon from '@material-ui/icons/School';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import Paper from '@material-ui/core/Paper';
-import SchoolIcon from '@material-ui/icons/School';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+
 import useStyles from './InfoEducation.styles';
-import { Typography } from '@material-ui/core';
 
 const InfoCard = ({ date, courseTitle, institutionName, description }) => {
   const classes = useStyles();
   return (
     <TimelineItem>
+      <TimelineOppositeContent className={classes.opp} />
       <TimelineSeparator>
         <TimelineDot color="primary">
           <SchoolIcon />

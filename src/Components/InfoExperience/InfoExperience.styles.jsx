@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-
 import { outerShadow } from '../../Theme/Colors';
 
 export default makeStyles((theme) => ({
@@ -12,6 +11,7 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   opp: {
+    flex: 1,
     [theme.breakpoints.down('sm')]: {
       display: 'none',
       flex: 0,

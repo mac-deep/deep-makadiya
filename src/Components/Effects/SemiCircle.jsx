@@ -1,5 +1,5 @@
-import React from "react";
-import "./effects.scss";
+import React from 'react';
+import './effects.scss';
 
 function SemiCircle() {
   return <div className="effect semi-circle"></div>;

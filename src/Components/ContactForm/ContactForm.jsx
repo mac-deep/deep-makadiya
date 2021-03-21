@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { db } from '../../Firebase/firebase';
 import { Grid } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
+
+import { db } from '../../Firebase/firebase';
 import { CustomTextField, CustomTextArea } from './ContactForm.styles';
 import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
-import SendIcon from '@material-ui/icons/Send';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     db.collection('messages')
       .add({
         name: formData.name,
@@ -29,35 +29,41 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} lg={6} direction="column">
-          <CustomTextField
-            fullWidth
-            required
-            type="text"
-            placeholder="Name"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
-          <CustomTextField
-            fullWidth
-            required
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
-          <CustomTextField
-            fullWidth
-            required
-            type="text"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-          />
+    <form onSubmit={handleSubmit}>
+      <Grid container spacing={3} alignItems="center">
+        <Grid item container xs={12} md={6} direction="column">
+          <Grid item xs={12}>
+            <CustomTextField
+              fullWidth
+              required
+              type="text"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <CustomTextField
+              fullWidth
+              required
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <CustomTextField
+              fullWidth
+              required
+              type="text"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} md={6}>
           <CustomTextArea
             multiline
             required

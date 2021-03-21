@@ -4,8 +4,11 @@ import { outerShadow } from '../../Theme/Colors';
 export const CustomTab = withStyles((theme) => ({
   root: {
     margin: 10,
-    // boxShadow: innerShadow,
     borderRadius: 30,
+    '&:hover': {
+      boxShadow: outerShadow,
+      color: theme.palette.primary.light,
+    },
   },
   selected: {
     boxShadow: outerShadow,

@@ -9,7 +9,6 @@ export default makeStyles((theme) => ({
     background: theme.palette.background.default,
     width: '100vw',
     height: '100vh',
-    // backdropFilter: 'blur(10px)',
   },
   navlist: {
     display: 'flex',
@@ -22,5 +21,11 @@ export default makeStyles((theme) => ({
     position: 'fixed',
     top: '30px',
     right: '30px',
+  },
+  copyright: {
+    position: 'absolute',
+    top: '50%',
+    left: -60,
+    transform: 'translateY(-50%) rotate(-90deg)',
   },
 }));

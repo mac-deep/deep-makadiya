@@ -1,15 +1,14 @@
 import { makeStyles } from '@material-ui/core';
-
-const outerShadow = '3px 3px 3px #222327, -3px -3px 3px #363636';
+import { outerShadow } from '../../Theme/Colors';
 
 export default makeStyles((theme) => ({
   paper: {
     width: '100vw',
     minHeight: '100vh',
-    backgroundColor: '#2b2c2f',
+    backgroundColor: theme.palette.background.default,
     transition: 'all 0.3s ease',
     padding: '30px 0',
-    // overflowY: 'scroll',
+    overflowX: 'hidden',
   },
   actionBtn: {
     display: 'flex',
@@ -18,7 +17,6 @@ export default makeStyles((theme) => ({
   details_container: {
     width: '100%',
     color: 'white',
-    padding: '50px 0',
   },
   imgBox: {
     margin: '10px',
@@ -35,5 +33,17 @@ export default makeStyles((theme) => ({
   handleBtn: {
     borderRadius: '50%',
     boxShadow: outerShadow,
+  },
+  divider: {
+    margin: '10px 0',
+  },
+  whiteText: {
+    color: 'white',
+  },
+  chips: {
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(0.3),
+    },
   },
 }));

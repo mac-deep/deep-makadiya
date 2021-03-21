@@ -1,40 +1,45 @@
 import React from 'react';
-import './HomePage.scss';
+import { Link } from 'react-router-dom';
+import { Avatar, Box, Container, Grid, Typography } from '@material-ui/core';
+
 import Img from '../../Assets/profileImg.jpg';
 import Effects from '../../Components/Effects/Effects.jsx';
-import { Avatar, Container, Grid, Typography } from '@material-ui/core';
-import makeStyles, { CustomFab } from './HomePage.styles';
+import useStyles, { CustomFab } from './HomePage.styles';
 
 const Home = () => {
-  const classes = makeStyles();
-
+  const classes = useStyles();
   return (
     <div className={classes.homepage}>
       <Effects className={classes.effects} />
       <Container maxWidth="lg">
-        <Grid container alignItems="center" className={classes.fullHeight}>
-          <Grid item container lg={6}>
-            <Grid item md={2} xs={0}></Grid>
-            <Grid item md={10} xs={12}>
-              <Typography variant="body2" color="textSecondary">
-                Hello
-              </Typography>
-              <Typography variant="h3" color="textPrimary">
-                I'm Deep Makadiya
-              </Typography>
-              <Typography variant="h6" color="textSecondary">
-                Web Designer & Developer
-              </Typography>
-              <CustomFab variant="extended" size="medium" disableFocusRipple color="inherit">
-                More About Me
-              </CustomFab>
+        <Grid container alignItems="center" justify="center" className={classes.fullHeight}>
+          <Box clone order={{ xs: 2, md: 1 }}>
+            <Grid item container xs={12} md={6} justify="center">
+              <Grid item>
+                <Typography variant="body2" color="textSecondary">
+                  Hello
+                </Typography>
+                <Typography variant="h3" color="textPrimary">
+                  I'm Deep Makadiya
+                </Typography>
+                <Typography variant="h6" color="textSecondary">
+                  Web Designer & Developer
+                </Typography>
+                <Link to="/aboutme">
+                  <CustomFab variant="extended" size="medium" disableFocusRipple color="inherit">
+                    More About Me
+                  </CustomFab>
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid item className={classes.imageBox}>
-            <div className={classes.outershadow}>
-              <Avatar src={Img} variant="circular" className={classes.profileImg} />
-            </div>
-          </Grid>
+          </Box>
+          <Box clone order={{ xs: 1, md: 2 }}>
+            <Grid item className={classes.imageBox}>
+              <div className={classes.outershadow}>
+                <Avatar src={Img} variant="circular" className={classes.profileImg} />
+              </div>
+            </Grid>
+          </Box>
         </Grid>
       </Container>
     </div>

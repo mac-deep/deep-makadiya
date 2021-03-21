@@ -1,5 +1,4 @@
-import { withStyles, IconButton } from '@material-ui/core';
-
+import { withStyles, IconButton, makeStyles } from '@material-ui/core';
 import { outerShadow, innerShadow } from '../../Theme/Colors';
 
 export const HoverButton = withStyles((theme) => ({
@@ -10,7 +9,17 @@ export const HoverButton = withStyles((theme) => ({
 
     '&:hover': {
       boxShadow: innerShadow,
+      backgroundColor: 'transparent',
       color: theme.palette.primary.main,
     },
   },
 }))(IconButton);
+
+export default makeStyles((theme) => ({
+  container: {
+    margin: '5px 0',
+  },
+  item: {
+    padding: theme.spacing(1),
+  },
+}));

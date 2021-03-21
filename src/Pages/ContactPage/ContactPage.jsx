@@ -1,19 +1,27 @@
 import React from 'react';
 import Title from '../../Components/Title/Title';
-import './Contact.scss';
 import ContactForm from '../../Components/ContactForm/ContactForm';
 import ContactTiles from '../../Components/ContactTiles/ContactTiles';
-import { Container, Paper } from '@material-ui/core';
+import { Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  fullView: {
+    backgroundColor: theme.palette.background.default,
+    minHeight: '100vh',
+  },
+}));
 
 const ContactPage = () => {
+  const classes = useStyles();
   return (
-    <Paper className="contact">
+    <div className={classes.fullView}>
       <Container maxWidth="lg">
         <Title head="Get In Touch" subHead="Contact" />
         <ContactTiles />
         <ContactForm />
       </Container>
-    </Paper>
+    </div>
   );
 };
 

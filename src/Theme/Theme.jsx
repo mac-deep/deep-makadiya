@@ -1,9 +1,7 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-// import { Component } from 'react';
 import { green, purple } from '@material-ui/core/colors';
-import { bgBlack50, textBlack600, textBlack700 } from './Colors';
-// import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+import { bgBlack50, textBlack600, textBlack700, bgBlue } from './Colors';
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -17,6 +15,29 @@ const darkTheme = createMuiTheme({
     text: {
       primary: textBlack700,
       secondary: textBlack600,
+    },
+  },
+  typography: {
+    fontFamily: 'Poppins',
+  },
+});
+
+const blueTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      // light: '#f0c38e',
+      light: '#eba14d',
+      main: '#ff9c07',
+    },
+    secondary: purple,
+    background: {
+      paper: bgBlue,
+      default: bgBlue,
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#999999',
     },
   },
   typography: {
@@ -42,7 +63,7 @@ const darkTheme = createMuiTheme({
 
 const Theme = (props) => {
   const { children } = props;
-  return <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={blueTheme}>{children}</ThemeProvider>;
 };
 
 export const withTheme = (Component) => {

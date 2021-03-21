@@ -12,7 +12,7 @@ export const CustomFab = withStyles((theme) => ({
     '&:hover': {
       color: theme.palette.primary.main,
       boxShadow: innerShadow,
-      background: 'transparent',
+      background: theme.palette.background.default,
     },
   },
 }))(Fab);
@@ -21,24 +21,38 @@ export default makeStyles((theme) => ({
   homepage: {
     background: theme.palette.background.default,
     minHeight: '100vh',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
   },
   fullHeight: {
+    zIndex: 100,
     height: '100vh',
   },
   profileImg: {
     width: theme.spacing(50),
     height: theme.spacing(50),
+    [theme.breakpoints.down('md')]: {
+      width: theme.spacing(40),
+      height: theme.spacing(40),
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: theme.spacing(30),
+      height: theme.spacing(30),
+    },
   },
   imageBox: {
     boxShadow: innerShadow,
     padding: '15px',
     marginBottom: '10px',
     borderRadius: '50%',
+    background: theme.palette.background.default,
   },
   outershadow: {
     padding: '10px',
     borderRadius: '50%',
     boxShadow: outerShadow,
+    background: theme.palette.background.default,
   },
   menuBtn: {
     position: 'fixed',

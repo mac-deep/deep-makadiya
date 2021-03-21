@@ -10,4 +10,12 @@ export default makeStyles((theme) => ({
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
+  opp: {
+    flex: 1,
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+      flex: 0,
+      padding: 0,
+    },
+  },
 }));

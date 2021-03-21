@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Container, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
+import { Box, Container } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
+
 import InfoSkills from '../InfoSkills/InfoSkills';
 import InfoEducation from '../InfoEducation/InfoEducation';
 import InfoExperience from '../InfoExperience/InfoExperience';
@@ -19,11 +20,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
 }
@@ -34,15 +31,14 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-// function a11yProps(index) {
-//   return {
-//     id: `simple-tab-${index}`,
-//     "aria-controls": `simple-tabpanel-${index}`,
-//   };
-// }
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
 
 const InfoTabs = () => {
-  // const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
   const handleChange = (event, newValue) => {
@@ -56,9 +52,9 @@ const InfoTabs = () => {
   return (
     <Container>
       <CustomTabs value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" centered>
-        <CustomTab label="Skills" />
-        <CustomTab label="Experience" />
-        <CustomTab label="Education" />
+        <CustomTab label="Skills" {...a11yProps(0)} />
+        <CustomTab label="Experience" {...a11yProps(1)} />
+        <CustomTab label="Education" {...a11yProps(2)} />
       </CustomTabs>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

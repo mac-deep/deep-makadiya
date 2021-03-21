@@ -1,14 +1,14 @@
 import React from 'react';
+import { Typography, Paper } from '@material-ui/core';
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
 import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import Paper from '@material-ui/core/Paper';
-import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
-import useStyles from './InfoExperience.styles';
-import { Typography } from '@material-ui/core';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+
+import useStyles from './InfoExperience.styles';
 
 const InfoCard = ({ date, jobTitle, companyName, description }) => {
   const classes = useStyles();

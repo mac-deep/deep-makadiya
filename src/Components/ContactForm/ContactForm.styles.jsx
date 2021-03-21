@@ -7,8 +7,8 @@ export const CustomTextField = withStyles((theme) => ({
     height: 50,
     boxShadow: outerShadow,
     borderRadius: 30,
-    padding: 10,
-    margin: 10,
+    padding: 20,
+    margin: '10px 0',
     '&:hover': {
       boxShadow: innerShadow,
     },
@@ -24,8 +24,7 @@ export const CustomTextArea = withStyles((theme) => ({
     height: 200,
     boxShadow: outerShadow,
     borderRadius: 30,
-    padding: 10,
-    margin: 10,
+    padding: 20,
     '&:hover': {
       boxShadow: innerShadow,
     },
@@ -34,23 +33,3 @@ export const CustomTextArea = withStyles((theme) => ({
     },
   },
 }))(InputBase);
-
-// export default makeStyles((theme) => ({
-//   input: {
-//     border: 'none',
-//     width: '100%',
-//     height: 50,
-//     boxShadow: outerShadow,
-//     borderRadius: 30,
-//     margin: 20,
-//     outline: 'none',
-//     '&:hover': {
-//       boxShadow: innerShadow,
-//     },
-//     '&:focus': {
-//       outline: 'none',
-//       border: 'none',
-//       boxShadow: innerShadow,
-//     },
-//   },
-// }));

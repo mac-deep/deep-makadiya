@@ -1,15 +1,19 @@
-import { Container, Typography } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Typography } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+
 import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
 import { HoverButton } from '../SocialLinks/SocialLinks.styles';
-import makeStyles from './Navbar.styles';
-import CloseIcon from '@material-ui/icons/Close';
-import { Link } from 'react-router-dom';
+import useStyles from './Navbar.styles';
 
 const Navbar = ({ handleClose }) => {
-  const classes = makeStyles();
+  const classes = useStyles();
   return (
     <div className={classes.navbar}>
+      <Typography color="primary" className={classes.copyright}>
+        &copy; 2021 Deep Makadiya
+      </Typography>
       <Container maxWidth="sm" className={classes.navlist}>
         <HoverButton onClick={handleClose} disableFocusRipple disableRipple className={classes.closeBtn}>
           <CloseIcon />
@@ -24,14 +28,14 @@ const Navbar = ({ handleClose }) => {
             <Typography variant="h5">About</Typography>
           </CustomFab>
         </Link>
-        <Link to="/contact">
-          <CustomFab onClick={handleClose} variant="extended">
-            <Typography variant="h5">Contact</Typography>
-          </CustomFab>
-        </Link>
         <Link to="/portfolio">
           <CustomFab variant="extended" onClick={handleClose}>
             <Typography variant="h5">Portfolio</Typography>
+          </CustomFab>
+        </Link>
+        <Link to="/contact">
+          <CustomFab onClick={handleClose} variant="extended">
+            <Typography variant="h5">Contact</Typography>
           </CustomFab>
         </Link>
       </Container>

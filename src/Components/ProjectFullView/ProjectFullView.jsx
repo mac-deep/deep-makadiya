@@ -1,82 +1,87 @@
-import { Container, Grid, Paper, Typography } from '@material-ui/core';
 import React from 'react';
-import { HoverButton } from '../SocialLinks/SocialLinks.styles';
-import useStyles from './ProjectFullView.styles';
-import CloseIcon from '@material-ui/icons/Close';
-import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
+import { Container, Grid, Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import Collapse from '@material-ui/core/Collapse';
 import Carousel from 'react-material-ui-carousel';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import I1 from '../../Assets/slideshows/1.PNG';
-import I2 from '../../Assets/slideshows/2.PNG';
-import I3 from '../../Assets/slideshows/3.PNG';
-import I4 from '../../Assets/slideshows/4.PNG';
-import I5 from '../../Assets/slideshows/5.PNG';
+import Chip from '@material-ui/core/Chip';
 
-const Details = () => {
+import CloseIcon from '@material-ui/icons/Close';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+
+import { HoverButton } from '../SocialLinks/SocialLinks.styles';
+import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
+import useStyles from './ProjectFullView.styles';
+
+const Details = ({ project }) => {
   const classes = useStyles();
   return (
     <div className={classes.details_container}>
-      <Typography variant="h4">Project Title</Typography>
-      <Typography variant="caption" gutterBottom>
-        Category: web application
+      <Typography variant="h4" color="primary">
+        {project.title}
       </Typography>
-      <Divider />
+      <Typography variant="caption" color="textSecondary" gutterBottom>
+        Category: {project.category}
+      </Typography>
+      <Divider className={classes.divider} />
       <Grid container spacing={3}>
-        <Grid item lg={8} xs={12}>
-          <Typography variant="h5" gutterBottom>
+        <Grid item md={8} xs={12}>
+          <Typography variant="h5" gutterBottom color="textprimary">
             Project Description :
           </Typography>
-          <Typography variant="body1">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, nisi voluptates debitis expedita id
-            temporibus quae dolor, sequi maiores, in excepturi accusamus quasi maxime? Dolore fugiat accusantium esse
-            error rem
+          <Typography variant="body1" color="textSecondary">
+            {project.description}
           </Typography>
         </Grid>
-        <Grid item lg={4} xs={12}>
-          <Typography variant="h5" gutterBottom>
+        <Grid item md={4} xs={12}>
+          <Typography variant="h5" gutterBottom color="textPrimary">
             Project Info :
           </Typography>
-          <Typography gutterBottom variant="body1">
-            Date: 2020
+          <Typography color="textSecondary" gutterBottom variant="body1">
+            <span className={classes.whiteText}>Date: </span>
+            {project.date}
           </Typography>
-          <Typography gutterBottom variant="body1">
-            Tools: html, css
+          <Typography color="textSecondary" gutterBottom variant="body1" component="div">
+            <span className={classes.whiteText}>Tools: </span>
+            <span className={classes.chips}>
+              {project.tools.map((tool, index) => (
+                <Chip size="small" label={tool} key={index} />
+              ))}
+            </span>
           </Typography>
-          <Typography gutterBottom variant="body1">
-            Web: 2020
+          <Typography color="textSecondary" gutterBottom variant="body1">
+            <span className={classes.whiteText}>Demo:</span>{' '}
+            <a href={`https://${project.link}/`} target="_blank" rel="noopener noreferrer">
+              {project.link}
+            </a>
           </Typography>
         </Grid>
       </Grid>
-      <Divider />
+      <Divider className={classes.divider} />
     </div>
   );
 };
 
-const ProjectFullView = ({ handleClose }) => {
+const ProjectFullView = ({ project, handleClose }) => {
   const classes = useStyles();
   const [details, setDetails] = React.useState(false);
 
   const openDetails = () => setDetails(!details);
-  // useEffect(() => {
-  // }, [details])
 
   return (
-    <Paper className={classes.paper}>
+    <div className={classes.paper}>
       <Container>
         <Grid container>
           <Collapse in={details}>
-            <Details />
+            <Details project={project} />
           </Collapse>
         </Grid>
         <Grid container alignItems="center" justify="space-between">
           <Grid item>
             <CustomFab variant="extended" onClick={() => openDetails()}>
-              Project details
+              Project details&nbsp;
               {details ? <RemoveIcon /> : <AddIcon />}
             </CustomFab>
           </Grid>
@@ -87,33 +92,16 @@ const ProjectFullView = ({ handleClose }) => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Carousel
-            NextIcon={<NavigateNextIcon />}
-            PrevIcon={<NavigateBeforeIcon />}
-            // navButtonsProps={{
-            //   // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
-
-            // }}
-          >
-            <div className={classes.imgBox}>
-              <img src={I1} alt="img" className={classes.image} />
-            </div>
-            <div className={classes.imgBox}>
-              <img src={I2} alt="img" className={classes.image} />
-            </div>
-            <div className={classes.imgBox}>
-              <img src={I3} alt="img" className={classes.image} />
-            </div>
-            <div className={classes.imgBox}>
-              <img src={I4} alt="img" className={classes.image} />
-            </div>
-            <div className={classes.imgBox}>
-              <img src={I5} alt="img" className={classes.image} />
-            </div>
+          <Carousel NextIcon={<NavigateNextIcon />} PrevIcon={<NavigateBeforeIcon />}>
+            {project.screenshots.map((screenshot, index) => (
+              <div className={classes.imgBox} key={index}>
+                <img src={screenshot} alt="img" className={classes.image} />
+              </div>
+            ))}
           </Carousel>
         </Grid>
       </Container>
-    </Paper>
+    </div>
   );
 };
 

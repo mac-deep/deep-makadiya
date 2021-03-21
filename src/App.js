@@ -1,18 +1,23 @@
 import React from 'react';
-import './App.css';
+import { CssBaseline, Dialog, Slide } from '@material-ui/core';
+import { Link, Route, Switch } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
+import MenuIcon from '@material-ui/icons/Menu';
+
 import HomePage from './Pages/HomePage/HomePage';
-import { Route, Switch } from 'react-router-dom';
-// import ThemeSwitchButton from './Components/ThemeSwitchButton/ThemeSwitchButton';
-import Dashboard1 from './Dashboard/Dashboard1';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import AboutMe from './Pages/AboutMe/AboutMe';
-import { CssBaseline, Modal } from '@material-ui/core';
-import { HoverButton } from './Components/SocialLinks/SocialLinks.styles';
-import Navbar from './Components/Navbar/Navbar';
-import MenuIcon from '@material-ui/icons/Menu';
-import Auth from './Components/Auth/Auth';
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage';
+
+import Navbar from './Components/Navbar/Navbar';
+import Auth from './Components/Auth/Auth';
+import { HoverButton } from './Components/SocialLinks/SocialLinks.styles';
 import { withTheme } from './Theme/Theme';
+import './App.css';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -28,20 +33,19 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <HoverButton disableFocusRipple onClick={handleOpen} style={{ position: 'fixed', top: '30px', right: '30px' }}>
+      <Link to="/">
+        <HoverButton disableFocusRipple className="homeBtn">
+          <HomeIcon />
+        </HoverButton>
+      </Link>
+      <HoverButton disableFocusRipple className="menuBtn" onClick={handleOpen}>
         <MenuIcon />
       </HoverButton>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
+      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <Navbar handleClose={handleClose} />
-      </Modal>
+      </Dialog>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/dashboard1" component={Dashboard1} />
         <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/aboutme" component={AboutMe} />
         <Route exact path="/auth" component={Auth} />

@@ -3,7 +3,7 @@ import './effects.scss';
 
 function Circle() {
   return (
-    <div class="effect circle">
+    <div className="effect circle">
       <div></div>
       <div></div>
       <div></div>

@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/macdeep/static/css/main.81253080.chunk.css",
-    "main.js": "/macdeep/static/js/main.6826258d.chunk.js",
-    "main.js.map": "/macdeep/static/js/main.6826258d.chunk.js.map",
-    "runtime-main.js": "/macdeep/static/js/runtime-main.ac08a1f0.js",
-    "runtime-main.js.map": "/macdeep/static/js/runtime-main.ac08a1f0.js.map",
-    "static/js/2.cc8dc00e.chunk.js": "/macdeep/static/js/2.cc8dc00e.chunk.js",
-    "static/js/2.cc8dc00e.chunk.js.map": "/macdeep/static/js/2.cc8dc00e.chunk.js.map",
-    "index.html": "/macdeep/index.html",
-    "static/css/main.81253080.chunk.css.map": "/macdeep/static/css/main.81253080.chunk.css.map",
-    "static/js/2.cc8dc00e.chunk.js.LICENSE.txt": "/macdeep/static/js/2.cc8dc00e.chunk.js.LICENSE.txt",
-    "static/media/profileImg.ed71ce65.jpg": "/macdeep/static/media/profileImg.ed71ce65.jpg"
+    "main.css": "/mac-deep/mac-deep.github.io.git/static/css/main.81253080.chunk.css",
+    "main.js": "/mac-deep/mac-deep.github.io.git/static/js/main.2072226d.chunk.js",
+    "main.js.map": "/mac-deep/mac-deep.github.io.git/static/js/main.2072226d.chunk.js.map",
+    "runtime-main.js": "/mac-deep/mac-deep.github.io.git/static/js/runtime-main.f498ec49.js",
+    "runtime-main.js.map": "/mac-deep/mac-deep.github.io.git/static/js/runtime-main.f498ec49.js.map",
+    "static/js/2.048823ff.chunk.js": "/mac-deep/mac-deep.github.io.git/static/js/2.048823ff.chunk.js",
+    "static/js/2.048823ff.chunk.js.map": "/mac-deep/mac-deep.github.io.git/static/js/2.048823ff.chunk.js.map",
+    "index.html": "/mac-deep/mac-deep.github.io.git/index.html",
+    "static/css/main.81253080.chunk.css.map": "/mac-deep/mac-deep.github.io.git/static/css/main.81253080.chunk.css.map",
+    "static/js/2.048823ff.chunk.js.LICENSE.txt": "/mac-deep/mac-deep.github.io.git/static/js/2.048823ff.chunk.js.LICENSE.txt",
+    "static/media/profileImg.ed71ce65.jpg": "/mac-deep/mac-deep.github.io.git/static/media/profileImg.ed71ce65.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac08a1f0.js",
-    "static/js/2.cc8dc00e.chunk.js",
+    "static/js/runtime-main.f498ec49.js",
+    "static/js/2.048823ff.chunk.js",
     "static/css/main.81253080.chunk.css",
-    "static/js/main.6826258d.chunk.js"
+    "static/js/main.2072226d.chunk.js"
   ]
 }

@@ -13,7 +13,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Auth from './Components/Auth/Auth';
 import { HoverButton } from './Components/SocialLinks/SocialLinks.styles';
 import { withTheme } from './Theme/Theme';
-import './App.css';
+import './App.scss';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;

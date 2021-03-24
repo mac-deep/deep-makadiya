@@ -47,7 +47,7 @@ const Details = ({ project }) => {
             <span className={classes.whiteText}>Tools: </span>
             <span className={classes.chips}>
               {project.tools.map((tool, index) => (
-                <Chip size="small" label={tool} key={index} />
+                <Chip size="small" color="secondary" label={tool} key={index} />
               ))}
             </span>
           </Typography>

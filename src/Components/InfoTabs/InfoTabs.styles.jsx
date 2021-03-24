@@ -1,4 +1,4 @@
-import { Tab, withStyles, Tabs } from '@material-ui/core';
+import { Tab, withStyles, Tabs, makeStyles } from '@material-ui/core';
 import { outerShadow } from '../../Theme/Colors';
 
 export const CustomTab = withStyles((theme) => ({
@@ -7,7 +7,6 @@ export const CustomTab = withStyles((theme) => ({
     borderRadius: 30,
     '&:hover': {
       boxShadow: outerShadow,
-      color: theme.palette.primary.light,
     },
   },
   selected: {
@@ -22,3 +21,5 @@ export const CustomTabs = withStyles((theme) => ({
     display: 'none',
   },
 }))(Tabs);
+
+export default makeStyles((theme) => ({}));

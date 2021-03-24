@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   fullView: {
     backgroundColor: theme.palette.background.default,
-    minHeight: '100vh',
   },
 }));
 

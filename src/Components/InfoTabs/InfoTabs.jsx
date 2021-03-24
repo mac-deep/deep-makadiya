@@ -7,7 +7,8 @@ import { useTheme } from '@material-ui/core/styles';
 import InfoSkills from '../InfoSkills/InfoSkills';
 import InfoEducation from '../InfoEducation/InfoEducation';
 import InfoExperience from '../InfoExperience/InfoExperience';
-import { CustomTab, CustomTabs } from './InfoTabs.styles';
+import useStyles, { CustomTab, CustomTabs } from './InfoTabs.styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -20,7 +21,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      {value === index && <Box p={1}>{children}</Box>}
     </div>
   );
 }
@@ -41,6 +42,8 @@ function a11yProps(index) {
 const InfoTabs = () => {
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('xs'));
+  const classes = useStyles();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -50,8 +53,15 @@ const InfoTabs = () => {
   };
 
   return (
-    <Container>
-      <CustomTabs value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" centered>
+    <Container className={classes.container}>
+      <CustomTabs
+        variant={matches && 'scrollable'}
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        textColor="primary"
+        centered={matches ? false : true}
+      >
         <CustomTab label="Skills" {...a11yProps(0)} />
         <CustomTab label="Experience" {...a11yProps(1)} />
         <CustomTab label="Education" {...a11yProps(2)} />

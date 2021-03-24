@@ -26,6 +26,9 @@ export default makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   infoTabs_container: {
-    minHeight: '90vh',
+    minHeight: '100vh',
+  },
+  highlight: {
+    color: theme.palette.primary.light,
   },
 }));

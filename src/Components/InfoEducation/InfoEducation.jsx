@@ -9,21 +9,20 @@ const InfoEducation = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
-  if (matches) {
-    return (
-      <Timeline align="left">
-        <InfoCard date="2020 - present" courseTitle="BE " institutionName="LDCE, Ahm" />
-        <InfoCard date="2019 - 2020" courseTitle="HighSchool" institutionName="BAPS, Gondal" />
-      </Timeline>
-    );
-  } else {
-    return (
-      <Timeline align="alternate">
-        <InfoCard date="2020 - present" courseTitle="BE " institutionName="LDCE, Ahm" />
-        <InfoCard date="2019 - 2020" courseTitle="HighSchool" institutionName="BAPS, Gondal" />
-      </Timeline>
-    );
-  }
+  return (
+    <Timeline align={matches ? 'left' : 'alternate'}>
+      <InfoCard
+        date="2019 - Present"
+        courseTitle="B.E. in Electronics & Communication"
+        institutionName="LDCE, Ahmedabad"
+      />
+      <InfoCard
+        date="2017 - 2019"
+        courseTitle="Higher Secondary School"
+        institutionName="BAPS Swaminarayan Vidhyamandir, Gondal"
+      />
+    </Timeline>
+  );
 };
 
 export default InfoEducation;

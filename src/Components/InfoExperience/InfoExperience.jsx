@@ -9,21 +9,11 @@ const InfoExperience = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
-  if (matches) {
-    return (
-      <Timeline align="left">
-        <InfoCard date="2020 - present" jobTitle="Frontend Dev" companyName="Pachira, India" />
-        <InfoCard date="2019 - 2020" jobTitle="UX/UI" companyName="Pachira, India" />
-      </Timeline>
-    );
-  } else {
-    return (
-      <Timeline align="alternate">
-        <InfoCard date="2020 - present" jobTitle="Frontend Dev" companyName="Pachira, India" />
-        <InfoCard date="2019 - 2020" jobTitle="UX/UI" companyName="Pachira, India" />
-      </Timeline>
-    );
-  }
+  return (
+    <Timeline align={matches ? 'left' : 'alternate'}>
+      <InfoCard date="Aug 2020 - Present" jobTitle="Graphics Designer" companyName="LDCE PRAKALPA, Ahmedabad" />
+    </Timeline>
+  );
 };
 
 export default InfoExperience;

@@ -39,6 +39,10 @@
   left: 50%;
   top: -130px;
   animation: leftBounce 3s ease-in-out infinite;
+
+  @media (max-width: 600px) {
+    left: 30%;
+  }
 }
 
 .react-logo {
@@ -67,6 +71,11 @@
     opacity: 0.5;
     left: -35px;
     top: -25px;
+  }
+
+  @media (max-width: 600px) {
+    bottom: 50%;
+    left: 75%;
   }
 }
 

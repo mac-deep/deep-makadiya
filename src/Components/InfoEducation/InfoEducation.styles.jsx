@@ -4,7 +4,7 @@ import { outerShadow } from '../../Theme/Colors';
 export default makeStyles((theme) => ({
   paper: {
     padding: '20px',
-    backgroundColor: 'transparent',
+    backgroundColor: theme.palette.background.paper,
     boxShadow: outerShadow,
   },
   secondaryTail: {

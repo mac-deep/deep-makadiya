@@ -13,7 +13,7 @@ const Home = () => {
       <Effects className={classes.effects} />
       <Container maxWidth="lg">
         <Grid container alignItems="center" justify="center" className={classes.fullHeight}>
-          <Box clone order={{ xs: 2, md: 1 }}>
+          <Box clone order={{ xs: 2, md: 1 }} className={classes.info}>
             <Grid item container xs={12} md={6} justify="center">
               <Grid item>
                 <Typography variant="body2" color="textSecondary">

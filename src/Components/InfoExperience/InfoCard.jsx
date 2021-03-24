@@ -27,10 +27,12 @@ const InfoCard = ({ date, jobTitle, companyName, description }) => {
             {date}
           </Typography>
           <Typography variant="h5">{jobTitle}</Typography>
-          <Typography variant="body2" gutterBottom>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
             <i>{companyName}</i>
           </Typography>
-          <Typography>{description}</Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            {description}
+          </Typography>
         </Paper>
       </TimelineContent>
     </TimelineItem>

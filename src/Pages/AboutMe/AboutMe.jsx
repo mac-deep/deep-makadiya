@@ -24,22 +24,16 @@ const AboutMe = () => {
           </Grid>
           <Grid item xs={12} lg={8} md={7} className={classes.myInfo_bio}>
             <Typography variant="body1" gutterBottom>
-              Hi My name is Deep Makadiya. I am a Web Developer. Lorem ipsum dolor sit, amet consectetur adipisicing
-              elit. Natus harum praesentium commodi, non incidunt magnam itaque temporibus fugiat sunt, ex quidem
-              reprehenderit, impedit quod a ad ullam voluptates dicta! Architecto.{' '}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              Natus harum praesentium commodi, non incidunt magnam itaque temporibus fugiat sunt, ex quidem
-              reprehenderit, impedit quod a ad ullam voluptates dicta! Architecto. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Perspiciatis debitis blanditiis est tenetur ipsum doloremque exercitationem
-              ratione porro, officia ipsam reiciendis delectus illum quas nesciunt! Fugit et labore sint eaque?{' '}
+              My name is <span className={classes.highlight}>Deep Makadiya</span>. Currently in the 4th sem, pursuing my
+              BE. I love to design stunning websites and find solutions for real-world problems. Quick learning and
+              Teamwork is my strength. Looking for the opportunity to work as a Web Developer or Designer.
             </Typography>
           </Grid>
         </Grid>
-        <Grid container className={classes.infoTabs_container}>
-          <InfoTabs />
-        </Grid>
       </Container>
+      <Grid container className={classes.infoTabs_container}>
+        <InfoTabs />
+      </Grid>
     </div>
   );
 };

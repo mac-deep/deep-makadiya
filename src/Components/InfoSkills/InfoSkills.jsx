@@ -7,7 +7,7 @@ import InfoCard from './InfoCard';
 const InfoSkills = () => {
   const classes = makeStyles();
   return (
-    <Grid container spacing={3} className={classes.infoSkills}>
+    <Grid container spacing={2} className={classes.infoSkills}>
       <Grid item xs={12} md={6}>
         <Typography variant="h6">
           <i className="fab fa-html5" /> HTML
@@ -28,9 +28,21 @@ const InfoSkills = () => {
       </Grid>
       <Grid item xs={12} md={6}>
         <Typography variant="h6">
-          <i className="fab fa-react" /> React
+          <i className="fab fa-bootstrap" /> Bootstrap
+        </Typography>
+        <InfoCard value={50} />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Typography variant="h6">
+          <i className="fab fa-react" /> ReactJS
         </Typography>
         <InfoCard value={60} />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Typography variant="h6">
+          <i className="fas fa-fire" /> Firebase
+        </Typography>
+        <InfoCard value={35} />
       </Grid>
     </Grid>
   );

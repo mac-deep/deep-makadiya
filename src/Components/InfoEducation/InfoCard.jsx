@@ -7,16 +7,20 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import useStyles from './InfoEducation.styles';
 
 const InfoCard = ({ date, courseTitle, institutionName, description }) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('xs'));
   const classes = useStyles();
   return (
     <TimelineItem>
       <TimelineOppositeContent className={classes.opp} />
       <TimelineSeparator>
-        <TimelineDot color="primary">
+        <TimelineDot color={'primary'}>
           <SchoolIcon />
         </TimelineDot>
         <TimelineConnector />
@@ -27,10 +31,12 @@ const InfoCard = ({ date, courseTitle, institutionName, description }) => {
             {date}
           </Typography>
           <Typography variant="h5">{courseTitle}</Typography>
-          <Typography variant="body2" gutterBottom>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
             <i>{institutionName}</i>
           </Typography>
-          <Typography>{description}</Typography>
+          <Typography variant={matches ? 'caption' : 'body1'} color="textSecondary">
+            {description}
+          </Typography>
         </Paper>
       </TimelineContent>
     </TimelineItem>

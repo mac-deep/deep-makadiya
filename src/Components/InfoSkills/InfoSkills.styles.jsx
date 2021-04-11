@@ -4,15 +4,13 @@ import { innerShadow } from '../../Theme/Colors';
 export const SkillBar = withStyles((theme) => ({
   root: {
     height: 18,
-    borderRadius: 10,
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
+    borderRadius: 5,
     boxShadow: innerShadow,
     background: 'transparent',
   },
   bar: {
     margin: 6,
-    borderRadius: 10,
+    borderRadius: 5,
     backgroundColor: theme.palette.primary.light,
   },
 }))(LinearProgress);

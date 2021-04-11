@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
     background: theme.palette.background.default,
     width: '100vw',
     height: '100vh',
+    overflowY: 'scroll',
   },
   navlist: {
     display: 'flex',

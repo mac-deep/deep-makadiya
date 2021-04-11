@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
     transition: 'all 0.3s ease',
     padding: '30px 0',
     overflowX: 'hidden',
+    overflowY: 'scroll',
   },
   actionBtn: {
     display: 'flex',

@@ -20,7 +20,7 @@ const InfoCard = ({ date, courseTitle, institutionName, description }) => {
     <TimelineItem>
       <TimelineOppositeContent className={classes.opp} />
       <TimelineSeparator>
-        <TimelineDot color={'primary'}>
+        <TimelineDot color={'secondary'}>
           <SchoolIcon />
         </TimelineDot>
         <TimelineConnector />

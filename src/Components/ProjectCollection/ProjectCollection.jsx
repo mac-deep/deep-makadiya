@@ -4,6 +4,18 @@ import { CircularProgress, Container, Grid } from '@material-ui/core';
 import ProjectCard from './ProjectCard';
 import { db } from '../../Firebase/firebase';
 
+const stylesContainer = {
+  minHeight: '65vh',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+const stylesItem = {
+  display: 'flex',
+  justifyContent: "center",
+};
+
 const ProjectCollection = () => {
   const [projects, setProjects] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
@@ -25,16 +37,16 @@ const ProjectCollection = () => {
 
   if (loading) {
     return (
-      <Container>
+      <Container style={stylesContainer}>
         <CircularProgress />
       </Container>
     );
   }
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} alignItems="center">
       {projects.map((project, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+        <Grid item xs={12} sm={6} md={4} lg={3} key={index} style={stylesItem} >
           <ProjectCard project={project} />
         </Grid>
       ))}

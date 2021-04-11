@@ -2,6 +2,7 @@
 // export const outerShadow = '3px 3px 3px #17042c, -3px -3px 3px #1e1a3d';
 // export const outerShadow = '3px 3px 3px #140425, -3px -3px 3px #1b1642';
 export const outerShadow = '3px 3px 6px #0d0d0d, -3px -3px 6px #353535';
+export const biggerOuterShadow = '9px 9px 18px #0d0d0d, -9px -9px 18px #1d1d1d';
 
 // export const innerShadow = 'inset 3px 3px 3px #222327, inset -3px -3px 3px #363636';
 // export const innerShadow = 'inset 3px 3px 3px #17042c, inset -3px -3px 3px #1e13ad';

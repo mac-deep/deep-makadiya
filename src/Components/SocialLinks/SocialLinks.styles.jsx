@@ -7,6 +7,7 @@ export const HoverButton = withStyles((theme) => ({
     transform: 'all 0.3s ease',
     color: theme.palette.primary.light,
     backgroundColor: theme.palette.background.default,
+    borderRadius: '20px',
     '&:hover': {
       boxShadow: innerShadow,
       backgroundColor: 'transparent',

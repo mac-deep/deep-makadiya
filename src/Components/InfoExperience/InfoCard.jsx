@@ -16,7 +16,7 @@ const InfoCard = ({ date, jobTitle, companyName, description }) => {
     <TimelineItem>
       <TimelineOppositeContent className={classes.opp} />
       <TimelineSeparator>
-        <TimelineDot color="primary">
+        <TimelineDot color={'secondary'}>
           <BusinessCenterIcon />
         </TimelineDot>
         <TimelineConnector />

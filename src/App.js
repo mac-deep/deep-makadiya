@@ -34,11 +34,11 @@ function App() {
     <>
       <CssBaseline />
       <Link to="/">
-        <HoverButton disableFocusRipple className="homeBtn">
+        <HoverButton color="primary" disableFocusRipple className="homeBtn">
           <HomeIcon />
         </HoverButton>
       </Link>
-      <HoverButton disableFocusRipple className="menuBtn" onClick={handleOpen}>
+      <HoverButton disableFocusRipple className="menuBtn" color="primary" onClick={handleOpen}>
         <MenuIcon />
       </HoverButton>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>

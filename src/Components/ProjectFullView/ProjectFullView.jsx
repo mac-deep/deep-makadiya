@@ -82,7 +82,7 @@ const ProjectFullView = ({ project, handleClose }) => {
           <Grid item>
             <CustomFab variant="extended" onClick={() => openDetails()}>
               Project details&nbsp;
-              {details ? <RemoveIcon /> : <AddIcon />}
+              {details ? <RemoveIcon color="primary" /> : <AddIcon color="primary" />}
             </CustomFab>
           </Grid>
           <Grid item>

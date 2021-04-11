@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { green, purple } from '@material-ui/core/colors';
+import { green, purple, deepOrange } from '@material-ui/core/colors';
 import { bgDark } from './Colors';
 
 // const darkTheme = createMuiTheme({
@@ -29,7 +29,10 @@ const darkTheme = createMuiTheme({
       light: '#eba14d',
       main: '#ff9c07',
     },
-    secondary: purple,
+    secondary: {
+      light: deepOrange[400],
+      main: deepOrange[900],
+    },
     background: {
       paper: bgDark,
       default: bgDark,

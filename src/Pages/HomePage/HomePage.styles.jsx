@@ -8,6 +8,7 @@ export const CustomFab = withStyles((theme) => ({
     background: theme.palette.background.paper,
     padding: '0 20px',
     margin: '10px',
+    borderRadius: 20,
     color: theme.palette.primary.light,
     '&:hover': {
       color: theme.palette.primary.main,

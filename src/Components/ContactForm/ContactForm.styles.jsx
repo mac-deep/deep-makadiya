@@ -6,7 +6,7 @@ export const CustomTextField = withStyles((theme) => ({
     border: 'none',
     height: 50,
     boxShadow: outerShadow,
-    borderRadius: 30,
+    borderRadius: 20,
     padding: 20,
     margin: '10px 0',
     '&:hover': {
@@ -23,7 +23,7 @@ export const CustomTextArea = withStyles((theme) => ({
     border: 'none',
     height: 200,
     boxShadow: outerShadow,
-    borderRadius: 30,
+    borderRadius: 20,
     padding: 20,
     '&:hover': {
       boxShadow: innerShadow,

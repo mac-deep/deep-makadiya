@@ -29,14 +29,14 @@ const ProjectCard = ({ project }) => {
   return (
     <>
       <Card className={classes.root} onClick={handleOpen}>
-        <CardActionArea>
-          <CardMedia className={classes.media} image={project.thumbnail} alt="thumbnail" title={project.title} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {project.title}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        {/* <CardActionArea> */}
+        <CardMedia className={classes.media} image={project.thumbnail} alt="thumbnail" title={project.title} />
+        <CardContent>
+          <Typography variant="h5" component="h2">
+            {project.title}
+          </Typography>
+        </CardContent>
+        {/* </CardActionArea> */}
       </Card>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <ProjectFullView project={project} handleClose={handleClose} />

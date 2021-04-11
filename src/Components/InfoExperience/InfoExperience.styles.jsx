@@ -6,6 +6,8 @@ export default makeStyles((theme) => ({
     padding: '20px',
     backgroundColor: 'transparent',
     boxShadow: outerShadow,
+    borderRadius: 20,
+    marginBottom: 10,
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,

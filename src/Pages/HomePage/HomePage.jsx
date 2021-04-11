@@ -26,7 +26,7 @@ const Home = () => {
                   Web Designer & Developer
                 </Typography>
                 <Link to="/aboutme">
-                  <CustomFab variant="extended" size="medium" disableFocusRipple color="inherit">
+                  <CustomFab variant="extended" disableFocusRipple color="inherit">
                     More About Me
                   </CustomFab>
                 </Link>

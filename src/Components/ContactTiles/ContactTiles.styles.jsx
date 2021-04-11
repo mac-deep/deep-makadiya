@@ -3,11 +3,13 @@ import { outerShadow } from '../../Theme/Colors';
 
 export default makeStyles((theme) => ({
   tile: {
-    height: 180,
+    height: 160,
+    borderRadius: 20,
     boxShadow: outerShadow,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 20,
   },
 }));

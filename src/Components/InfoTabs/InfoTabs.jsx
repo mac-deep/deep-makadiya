@@ -54,6 +54,7 @@ const InfoTabs = () => {
 
   return (
     <Container className={classes.container}>
+      <div className={classes.dashes} />
       <CustomTabs
         variant={matches && 'scrollable'}
         value={value}

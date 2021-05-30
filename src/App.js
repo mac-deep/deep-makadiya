@@ -8,6 +8,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import AboutMe from './Pages/AboutMe/AboutMe';
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage';
+import Admin from './Pages/Admin/Admin';
 
 import Navbar from './Components/Navbar/Navbar';
 import Auth from './Components/Auth/Auth';
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/aboutme" component={AboutMe} />
         <Route exact path="/auth" component={Auth} />
         <Route exact path="/portfolio" component={PortfolioPage} />
+        <Route exact path="/admin" component={Admin} />
       </Switch>
     </>
   );

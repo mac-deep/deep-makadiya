@@ -8,7 +8,7 @@ const Admin = () => {
   // return <div>{admin ? <Dashboard /> : <Auth />}</div>;
   return (
     <div>
-      <Auth />
+      <Dashboard />
     </div>
   );
 };

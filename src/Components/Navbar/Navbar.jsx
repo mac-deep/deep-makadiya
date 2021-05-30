@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Container, Typography } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
-import { HoverButton } from '../SocialLinks/SocialLinks.styles';
+import CustomFab from '../../CustomUI/CustomFab';
+import CustomIconButton from '../../CustomUI/CustomIconButton';
 import useStyles from './Navbar.styles';
 
 const Navbar = ({ handleClose }) => {
@@ -15,9 +15,9 @@ const Navbar = ({ handleClose }) => {
         &copy; 2021 Deep Makadiya
       </Typography>
       <Container maxWidth="sm" className={classes.navlist}>
-        <HoverButton onClick={handleClose} disableFocusRipple disableRipple className={classes.closeBtn}>
+        <CustomIconButton onClick={handleClose} disableFocusRipple disableRipple className={classes.closeBtn}>
           <CloseIcon />
-        </HoverButton>
+        </CustomIconButton>
         <Link to="/">
           <CustomFab onClick={handleClose} variant="extended">
             <Typography variant="h5">Home</Typography>

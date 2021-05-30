@@ -12,7 +12,8 @@ import Admin from './Pages/Admin/Admin';
 
 import Navbar from './Components/Navbar/Navbar';
 import Auth from './Components/Auth/Auth';
-import { HoverButton } from './Components/SocialLinks/SocialLinks.styles';
+
+import CustomIconButton from './CustomUI/CustomIconButton';
 import { withTheme } from './Theme/Theme';
 import './App.scss';
 
@@ -35,13 +36,13 @@ function App() {
     <>
       <CssBaseline />
       <Link to="/">
-        <HoverButton color="primary" disableFocusRipple className="homeBtn">
+        <CustomIconButton color="primary" disableFocusRipple className="homeBtn">
           <HomeIcon />
-        </HoverButton>
+        </CustomIconButton>
       </Link>
-      <HoverButton disableFocusRipple className="menuBtn" color="primary" onClick={handleOpen}>
+      <CustomIconButton disableFocusRipple className="menuBtn" color="primary" onClick={handleOpen}>
         <MenuIcon />
-      </HoverButton>
+      </CustomIconButton>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <Navbar handleClose={handleClose} />
       </Dialog>

@@ -11,8 +11,8 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-import { HoverButton } from '../SocialLinks/SocialLinks.styles';
-import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
+import CustomIconButton from '../../CustomUI/CustomIconButton';
+import CustomFab from '../../CustomUI/CustomFab';
 import useStyles from './ProjectFullView.styles';
 
 const Details = ({ project }) => {
@@ -86,9 +86,9 @@ const ProjectFullView = ({ project, handleClose }) => {
             </CustomFab>
           </Grid>
           <Grid item>
-            <HoverButton onClick={handleClose} disableFocusRipple>
+            <CustomIconButton onClick={handleClose} disableFocusRipple>
               <CloseIcon />
-            </HoverButton>
+            </CustomIconButton>
           </Grid>
         </Grid>
         <Grid item xs={12}>

@@ -3,8 +3,9 @@ import { Grid } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
 import { db } from '../../Firebase/firebase';
-import { CustomTextField, CustomTextArea } from './ContactForm.styles';
-import { CustomFab } from '../../Pages/HomePage/HomePage.styles';
+import CustomTextArea from '../../CustomUI/CustomTextArea';
+import CustomTextField from '../../CustomUI/CustomTextField';
+import CustomFab from '../../CustomUI/CustomFab';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });

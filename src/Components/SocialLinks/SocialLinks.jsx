@@ -5,7 +5,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-import useStyles, { HoverButton } from './SocialLinks.styles';
+import useStyles from './SocialLinks.styles';
+import CustomIconButton from '../../CustomUI/CustomIconButton';
 
 const SocialLinks = () => {
   const classes = useStyles();
@@ -13,30 +14,30 @@ const SocialLinks = () => {
     <Grid container justify="center" className={classes.container}>
       <Grid item className={classes.item}>
         <a href="https://github.com/mac-deep" target="_blank" rel="noopener noreferrer">
-          <HoverButton disableFocusRipple disableRipple>
+          <CustomIconButton disableFocusRipple disableRipple>
             <GitHubIcon />
-          </HoverButton>
+          </CustomIconButton>
         </a>
       </Grid>
       <Grid item className={classes.item}>
         <a href="https://twitter.com/macdeep_" target="_blank" rel="noopener noreferrer">
-          <HoverButton disableFocusRipple>
+          <CustomIconButton disableFocusRipple>
             <TwitterIcon />
-          </HoverButton>
+          </CustomIconButton>
         </a>
       </Grid>
       <Grid item className={classes.item}>
         <a href="https://www.instagram.com/therabbitteeth_" target="_blank" rel="noopener noreferrer">
-          <HoverButton disableFocusRipple>
+          <CustomIconButton disableFocusRipple>
             <InstagramIcon />
-          </HoverButton>
+          </CustomIconButton>
         </a>
       </Grid>
       <Grid item className={classes.item}>
         <a href="https://linkedin.com/in/deep-makadiya-1908b6190" target="_blank" rel="noopener noreferrer">
-          <HoverButton disableFocusRipple>
+          <CustomIconButton disableFocusRipple>
             <LinkedInIcon />
-          </HoverButton>
+          </CustomIconButton>
         </a>
       </Grid>
     </Grid>

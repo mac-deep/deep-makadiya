@@ -4,8 +4,8 @@ import { Avatar, Box, Container, Grid, Typography } from '@material-ui/core';
 
 import Img from '../../Assets/profileImg.jpg';
 import Effects from '../../Components/Effects/Effects.jsx';
-import useStyles, { CustomFab } from './HomePage.styles';
-
+import useStyles from './HomePage.styles';
+import CustomFab from '../../CustomUI/CustomFab';
 const Home = () => {
   const classes = useStyles();
   return (

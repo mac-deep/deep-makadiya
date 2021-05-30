@@ -3,10 +3,8 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
 import useStyles from './Auth.styles';
-import { Avatar, Box, Button, CssBaseline, Grid, Typography } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
+import { Avatar, Box, CssBaseline, Grid } from '@material-ui/core';
 import CustomTextField from '../../CustomUI/CustomTextField';
-import CustomFab from '../../CustomUI/CustomFab';
 import CustomButton from '../../CustomUI/CustomButton';
 
 const Auth = () => {

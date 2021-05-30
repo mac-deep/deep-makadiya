@@ -1,5 +1,5 @@
 import { withStyles, InputBase } from '@material-ui/core';
-import { outerShadow, innerShadow } from '../Theme/Colors';
+import { innerShadow } from '../Theme/Colors';
 
 const CustomTextField = withStyles((theme) => ({
   root: {

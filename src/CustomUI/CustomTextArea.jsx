@@ -5,12 +5,12 @@ const CustomTextArea = withStyles((theme) => ({
   root: {
     border: 'none',
     height: 200,
-    boxShadow: outerShadow,
+    boxShadow: innerShadow,
     borderRadius: 20,
     padding: 20,
-    '&:hover': {
-      boxShadow: innerShadow,
-    },
+    // '&:hover': {
+    //   boxShadow: ,
+    // },
     '&:focus': {
       outline: 'none',
     },

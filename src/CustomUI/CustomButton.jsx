@@ -1,5 +1,5 @@
 import { withStyles, Button } from '@material-ui/core';
-import { innerShadow, outerShadow } from '../Theme/Colors';
+import { outerShadow } from '../Theme/Colors';
 
 const CustomButton = withStyles((theme) => ({
   root: {

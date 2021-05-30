@@ -53,6 +53,7 @@ function App() {
         <Route exact path="/auth" component={Auth} />
         <Route exact path="/portfolio" component={PortfolioPage} />
         <Route exact path="/admin" component={Admin} />
+        {/* <Route exact path="/admin/projects" component={Projects} /> */}
       </Switch>
     </>
   );

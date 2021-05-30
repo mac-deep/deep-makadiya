@@ -1,46 +1,34 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
+import { outerShadow } from '../../Theme/Colors';
 
 const drawerWidth = 300;
 
 export default makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexGrow: 1,
+    zIndex: 100,
+    height: '100vh',
+    display: 'flex',
   },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
+  sidebar: {
+    display: 'flex',
+    flex: '0 0 25%',
   },
-  appBar: {
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      height: "60px",
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-  title: {
-    flexGrow: 1,
-  },
-  // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth,
+  sidebar_container: {
+    margin: '1rem',
+    width: '100%',
+    boxShadow: outerShadow,
+    borderRadius: '30px',
+    paddingTop: 100,
   },
   content: {
-    top: "60px",
-    flexGrow: 1,
-    padding: theme.spacing(3),
+    display: 'flex',
+    flex: '0 0 75%',
   },
-  container: {
-    display: "flex",
-    flexDirection: "column",
+  content_container: {
+    margin: '1rem',
+    padding: '1rem',
+    flex: 1,
+    boxShadow: outerShadow,
+    borderRadius: '30px',
   },
 }));

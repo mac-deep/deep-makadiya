@@ -1,24 +1,43 @@
-import React from 'react';
 import {
+  Button,
+  Chip,
+  Container,
   FormControl,
   Grid,
   IconButton,
+  Input,
   InputLabel,
+  LinearProgress,
   MenuItem,
   Paper,
   Select,
   TextField,
   Typography,
-  Button,
-  LinearProgress,
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-// import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
-// import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
-import useStyles from './NewProjectForm.styles';
-import useStorage from '../../Hooks/useStorage';
+import React from 'react';
+import CustomTextArea from '../../CustomUI/CustomTextArea';
+import CustomTextField from '../../CustomUI/CustomTextField';
+import useStyles from './ProjectForm.styles';
+import CancelIcon from '@material-ui/icons/Cancel';
+import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
+import CustomButton from '../../CustomUI/CustomButton';
+import Switch from '@material-ui/core/Switch';
 
-const NewProjectForm = ({ handleClose }) => {
+import { db } from '../../Firebase/firebase';
+
+const tool = [
+  'ReactJS',
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'Styled-Component',
+  'Firebase',
+  'MongoDB',
+  'TypeScript',
+  'ExpressJS',
+  'NodeJS',
+];
+const ProjectForm = ({ setOpen, open }) => {
   const classes = useStyles();
   const [projectData, setProjectData] = React.useState({
     title: '',
@@ -29,28 +48,60 @@ const NewProjectForm = ({ handleClose }) => {
     link: '',
     thumbnail: '',
     slideshow: '',
+    visibility: false,
   });
-  const { url, progress } = useStorage(projectData.thumbnail);
-  console.log(projectData);
-  console.log(progress, url);
+  console.log(setOpen, open);
+  //  const handleClose = () => {
 
+  //  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    db.collection('projects')
+      .add({
+        title: projectData.title,
+        category: projectData.category,
+        description: projectData.description,
+        date: projectData.date,
+        tools: projectData.tools,
+        link: projectData.link,
+        visibility: projectData.visibility,
+      })
+      .then(() => {
+        alert('project submitted');
+        console.log(projectData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    handleClear();
+    setOpen();
+  };
+  const handleClear = () => {
+    setProjectData({
+      title: '',
+      category: 'web-app',
+      description: '',
+      date: '',
+      tools: [],
+      link: '',
+      thumbnail: '',
+      slideshow: '',
+      visibility: false,
+    });
+  };
   return (
-    <div className={classes.root}>
-      <IconButton onClick={handleClose} className={classes.closeBtn}>
-        <CloseIcon />
-      </IconButton>
+    <Container className={classes.container}>
       <Paper className={classes.paper}>
+        <CancelIcon onClick={setOpen} className={classes.closeBtn} />
+        <h1>This will be a project form</h1>
         <Grid container spacing={2}>
-          <Grid item sm={12}>
-            <Typography variant="h3">Fill the details for new project:</Typography>
-          </Grid>
           <Grid item container sm={4} spacing={2}>
             <Grid item sm={10}>
-              <TextField
+              <CustomTextField
                 fullWidth
                 autoFocus
                 variant="outlined"
-                label="Title"
+                placeholder="Title"
                 name="title"
                 value={projectData.title}
                 onChange={(e) => setProjectData({ ...projectData, title: e.target.value })}
@@ -74,10 +125,10 @@ const NewProjectForm = ({ handleClose }) => {
             </Grid>
 
             <Grid item sm={10}>
-              <TextField
+              <CustomTextArea
                 fullWidth
                 variant="outlined"
-                label="description"
+                placeholder="Description"
                 multiline
                 name="description"
                 value={projectData.description}
@@ -88,7 +139,7 @@ const NewProjectForm = ({ handleClose }) => {
           </Grid>
           <Grid item container sm={4} spacing={1}>
             <Grid item sm={10}>
-              <TextField
+              <CustomTextField
                 fullWidth
                 variant="outlined"
                 // focused
@@ -99,42 +150,67 @@ const NewProjectForm = ({ handleClose }) => {
               />
             </Grid>
             <Grid item sm={10}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                value={projectData.tools}
-                onChange={(e) => setProjectData({ ...projectData, tools: e.target.value })}
-                label="Tools"
-              />
+              <FormControl className={classes.formControl}>
+                <InputLabel id="demo-mutiple-chip-label">Tools</InputLabel>
+                <Select
+                  fullWidth
+                  labelId="demo-mutiple-chip-label"
+                  id="demo-mutiple-chip"
+                  multiple
+                  value={projectData.tools}
+                  onChange={(e) => setProjectData({ ...projectData, tools: e.target.value })}
+                  input={<Input id="select-multiple-chip" />}
+                  renderValue={(selected) => (
+                    <div className={classes.chips}>
+                      {selected.map((value) => (
+                        <Chip size="small" key={value} label={value} className={classes.chip} />
+                      ))}
+                    </div>
+                  )}
+                >
+                  {tool.map((name) => (
+                    <MenuItem key={name} value={name}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item sm={10}>
-              <TextField
+              <CustomTextField
                 fullWidth
                 variant="outlined"
                 value={projectData.link}
                 onChange={(e) => setProjectData({ ...projectData, link: e.target.value })}
-                label="Live Link"
+                placeholder="Live Link"
+              />
+            </Grid>
+            <Grid item sm={10}>
+              Visibility
+              <Switch
+                color="primary"
+                checked={projectData.visibility}
+                onChange={(e) => setProjectData({ ...projectData, visibility: !projectData.visibility })}
               />
             </Grid>
           </Grid>
           <Grid item container sm={4} spacing={1}>
             <Grid item sm={12}>
               <Typography variant="h6">Thumbnail: </Typography>
-              <LinearProgress variant="determinate" value={progress} />
+              {/* <LinearProgress variant="determinate" value={progress} /> */}
               <input
                 accept="image/*"
                 id="thumbnail"
                 onChange={(e) => setProjectData({ ...projectData, thumbnail: e.target.files[0] })}
                 type="file"
-                // className={classes.input}
+                // className={classes.thumbnail}
               />
-              {projectData.thumbnail && <p>{projectData.thumbnail.name}</p>}
-              {/* <label htmlFor="thumbnail">
-                 <IconButton component="span" color="secondary">
+              <label htmlFor="thumbnail">
+                <IconButton component="button">
                   <AddPhotoAlternateIcon fontSize="large" />
                 </IconButton>
-              thumbnail
-              </label> */}
+                {projectData.thumbnail && <span>{projectData.thumbnail.name}</span>}
+              </label>
             </Grid>
             <Grid item sm={6}>
               <Typography variant="h6">Slideshow:</Typography>
@@ -159,22 +235,21 @@ const NewProjectForm = ({ handleClose }) => {
             </Grid>
             <Grid item container sm={3} spacing={2}>
               <Grid item sm={6}>
-                <Button fullWidth variant="outlined" color="secondary">
+                <CustomButton fullWidth variant="outlined" color="secondary" onClick={handleClear}>
                   Clear
-                </Button>
+                </CustomButton>
               </Grid>
               <Grid item sm={6}>
-                <Button fullWidth variant="contained" color="primary">
+                <CustomButton fullWidth variant="contained" color="primary" onClick={handleSubmit}>
                   Publish
-                </Button>
+                </CustomButton>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
-    </div>
+    </Container>
   );
 };
 
-// export default ;
-export default NewProjectForm;
+export default ProjectForm;

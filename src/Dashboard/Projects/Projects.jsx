@@ -1,9 +1,10 @@
 import React from 'react';
-import { Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import useStyles from './Projects.styles';
 import Modal from '@material-ui/core/Modal';
-import NewProjectForm from '../NewProjectForm/NewProjectForm';
+import ProjectTable from './ProjectTable';
+import CustomFab from '../../CustomUI/CustomFab';
+import ProjectForm from './ProjectForm';
 
 const Projects = () => {
   const classes = useStyles();
@@ -16,17 +17,33 @@ const Projects = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const body = (
+    <div>
+      <ProjectForm setOpen={handleClose} />;
+    </div>
+  );
 
   return (
     <div>
       <div>
-        <h1>project table</h1>
+        <h1>Project table</h1>
       </div>
-      <Fab className={classes.addBtn} color="primary" variant="extended" type="button" onClick={handleOpen}>
-        <AddIcon /> Add Project
-      </Fab>
-      <Modal open={open} aria-labelledby="simple-modal-title" aria-describedby="simple-modal-description">
-        <NewProjectForm handleClose={handleClose} />
+      <ProjectTable />
+
+      <CustomFab className={classes.addBtn} variant="extended" color="primary" onClick={handleOpen}>
+        <AddIcon />
+        Add Project
+      </CustomFab>
+      <Modal
+        open={open}
+        // onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <div>
+          <ProjectForm open={open} setOpen={handleClose} />
+        </div>
+        {/* {body} */}
       </Modal>
     </div>
   );

@@ -1,109 +1,48 @@
-// import React from "react";
-// import { Route, Switch, withRouter } from "react-router-dom";
-// import AppBar from "@material-ui/core/AppBar";
-// import CssBaseline from "@material-ui/core/CssBaseline";
-// import Drawer from "@material-ui/core/Drawer";
-// import Hidden from "@material-ui/core/Hidden";
-// import IconButton from "@material-ui/core/IconButton";
-// import MenuIcon from "@material-ui/icons/Menu";
-// import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
+import React, { useState } from 'react';
+import useStyles from './Dashboard.styles';
+import Projects from '../../Dashboard/Projects/Projects';
+import AddSkills from '../../Dashboard/AddSkills/AddSkills';
+import MessagesCollection from '../../Dashboard/MessageCollection/MessagesCollection';
 
-// import useStyles from "./Dashboard.styles";
-// import Sidebar from "../../Components/Sidebar/Sidebar";
+import { Paper } from '@material-ui/core';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
-// import ThemeSwitchButton from "../../Components/ThemeSwitchButton/ThemeSwitchButton";
+const Dashboard = () => {
+  const classes = useStyles();
+  const [active, setActive] = useState('home');
+  return (
+    <div className={classes.root}>
+      <div className={classes.sidebar}>
+        <Paper className={classes.sidebar_container}>
+          <List>
+            <ListItem button onClick={() => setActive('home')}>
+              <ListItemText primary="Home" />
+            </ListItem>
+            <ListItem button onClick={() => setActive('projects')}>
+              <ListItemText primary="Projects" />
+            </ListItem>
+            <ListItem button onClick={() => setActive('skills')}>
+              <ListItemText primary="Skills" />
+            </ListItem>
+            <ListItem button onClick={() => setActive('messages')}>
+              <ListItemText primary="Messages" />
+            </ListItem>
+          </List>
+        </Paper>
+      </div>
+      <div className={classes.content}>
+        <Paper className={classes.content_container}>
+          {active === 'home' && null}
+          {active === 'projects' && <Projects />}
+          {active === 'skills' && <AddSkills />}
+          {active === 'messages' && <MessagesCollection />}
+        </Paper>
+      </div>
+    </div>
+  );
+};
 
-// import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-// import AddProject from "../../Components/AddProject/AddProject";
-// import AddSkills from "../../Components/AddSkills/AddSkills";
-// import AddExperience from "../../Components/AddExperience/AddExperience";
-
-// function Dashboard(props) {
-//   const { history } = props;
-//   const [darkmode, setDarkmode] = React.useState(false);
-//   const classes = useStyles();
-//   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-//   const theme = createMuiTheme({
-//     palette: {
-//       type: darkmode ? "dark" : "light",
-//     },
-//   });
-
-//   const handleDrawerToggle = () => {
-//     setMobileOpen(!mobileOpen);
-//   };
-
-//   //   const container =
-//   //     window !== undefined ? () => window().document.body : undefined;
-
-//   return (
-//     <ThemeProvider theme={theme}>
-//       <div className={classes.root}>
-//         <CssBaseline />
-//         <nav className={classes.drawer} aria-label="mailbox folders">
-//           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-//           <Hidden smUp implementation="css">
-//             <Drawer
-//               // container={container}
-//               variant="temporary"
-//               anchor="left"
-//               open={mobileOpen}
-//               onClose={handleDrawerToggle}
-//               classes={{
-//                 paper: classes.drawerPaper,
-//               }}
-//               ModalProps={{
-//                 keepMounted: true, // Better open performance on mobile.
-//               }}
-//             >
-//               <Sidebar />
-//             </Drawer>
-//           </Hidden>
-//           <Hidden xsDown implementation="css">
-//             <Drawer
-//               classes={{
-//                 paper: classes.drawerPaper,
-//               }}
-//               variant="permanent"
-//               open
-//             >
-//               <Sidebar />
-//             </Drawer>
-//           </Hidden>
-//         </nav>
-//         <div className={classes.container}>
-//           {/* <AppBar position="fixed" className={classes.appBar}>
-//             <Toolbar>
-//               <IconButton
-//                 color="inherit"
-//                 aria-label="open drawer"
-//                 edge="start"
-//                 onClick={handleDrawerToggle}
-//                 className={classes.menuButton}
-//               >
-//                 <MenuIcon />
-//               </IconButton>
-//               <Typography variant="h6" noWrap className={classes.title}>
-//                 Dashboard
-//               </Typography>
-//               <IconButton edge="end">
-//                 <ThemeSwitchButton
-//                   darkmode={darkmode}
-//                   setDarkmode={setDarkmode}
-//                 />
-//               </IconButton>
-//             </Toolbar>
-//           </AppBar> */}
-//           <main className={classes.content}>
-//             <div className={classes.toolbar} />
-//             {}
-//           </main>
-//         </div>
-//       </div>
-//     </ThemeProvider>
-//   );
-// }
-
-// export default withRouter(Dashboard);
+export default Dashboard;

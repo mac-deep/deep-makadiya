@@ -20,21 +20,21 @@ const SocialLinks = () => {
         </a>
       </Grid>
       <Grid item className={classes.item}>
-        <a href="https://twitter.com/macdeep_" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/deepfromdawn" target="_blank" rel="noopener noreferrer">
           <CustomIconButton disableFocusRipple>
             <TwitterIcon />
           </CustomIconButton>
         </a>
       </Grid>
       <Grid item className={classes.item}>
-        <a href="https://www.instagram.com/therabbitteeth_" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/deepfromdawn" target="_blank" rel="noopener noreferrer">
           <CustomIconButton disableFocusRipple>
             <InstagramIcon />
           </CustomIconButton>
         </a>
       </Grid>
       <Grid item className={classes.item}>
-        <a href="https://linkedin.com/in/deep-makadiya-1908b6190" target="_blank" rel="noopener noreferrer">
+        <a href="https://linkedin.com/in/deepmakadiya" target="_blank" rel="noopener noreferrer">
           <CustomIconButton disableFocusRipple>
             <LinkedInIcon />
           </CustomIconButton>
